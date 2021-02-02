@@ -1,1 +1,32 @@
-/* You can add global styles to this file, and also import other style files */
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+
+@import 'theme';
+
+@include mat-core();
+
+$vakers-primary: mat-palette($mat-vaki-theme-primary);
+$vakers-accent: mat-palette($mat-vaki-theme-accent, A200, A100, A400);
+$vakers-warn: mat-palette($vaki-mat-warn);
+
+$vakers-theme: mat-light-theme(
+  (
+    color: (
+      primary: $vakers-primary,
+      accent: $vakers-accent,
+      warn: $vakers-warn,
+    ),
+  )
+);
+
+@include angular-material-theme($vakers-theme);
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}

@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VakiDetailsCardComponent } from './vaki-details-card.component';
+import { VakiDetailsComponent } from './vaki-details.component';
 
-describe('VakiDetailsCardComponent', () => {
-  let component: VakiDetailsCardComponent;
-  let fixture: ComponentFixture<VakiDetailsCardComponent>;
+describe('VakiDetailsComponent', () => {
+  let component: VakiDetailsComponent;
+  let fixture: ComponentFixture<VakiDetailsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [VakiDetailsCardComponent],
+      declarations: [VakiDetailsComponent],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(VakiDetailsCardComponent);
+    fixture = TestBed.createComponent(VakiDetailsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

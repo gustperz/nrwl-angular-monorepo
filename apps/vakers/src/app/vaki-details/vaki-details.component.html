@@ -1,0 +1,9 @@
+<div class="container">
+  <vaki-vaki-details-card *ngIf="vaki" [vaki]="vaki"></vaki-vaki-details-card>
+  <div>
+    <vaki-vaki-reward-card
+      *ngFor="let reward of rewards"
+      [reward]="reward"
+    ></vaki-vaki-reward-card>
+  </div>
+</div>

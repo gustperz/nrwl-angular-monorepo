@@ -1,0 +1,15 @@
+.container {
+  margin: 0 auto;
+  position: relative;
+  width: calc(100% - 24px);
+
+  @media screen and (min-width: 1280px) {
+    width: 1140px;
+  }
+  @media screen and (min-width: 960px) {
+    width: 860px;
+  }
+  @media screen and (min-width: 840px) {
+    width: 728px;
+  }
+}

@@ -1,1 +1,33 @@
-<p>vaki-details-card works! sfg</p>
+<mat-card class="vaki-card">
+  <div class="photo">
+    <img [src]="vaki.photo" alt="Photo of a Vaki" />
+  </div>
+
+  <div class="content">
+    <mat-card-title>{{ vaki.name }}</mat-card-title>
+
+    <mat-card-content>
+      <p>Hasta {{ vaki.close_date.toDate() | date }}</p>
+      <div class="contribute">
+        <mat-form-field appearance="outline" class="currency">
+          <mat-label>Moneda</mat-label>
+          <mat-select>
+            <mat-option value="COP">COP</mat-option>
+            <mat-option value="USD">USD</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="amount">
+          <mat-icon matPrefix>paid</mat-icon>
+          <mat-label>Cuato quieres aportar?</mat-label>
+          <input matInput type="number" />
+        </mat-form-field>
+
+        <button mat-raised-button color="primary">APORTAR</button>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-stroked-button color="primary">VER RECOMPENSAS</button>
+    </mat-card-actions>
+  </div>
+</mat-card>

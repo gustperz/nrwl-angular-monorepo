@@ -15,7 +15,9 @@ export class VakisStoreService {
 
   getVakiRewards(id: string) {
     return this.firestore
-      .collection<VakiReward>('vakis', (ref) => ref.where('key', '==', id))
+      .collection<VakiReward>('vaki_rewards', (ref) =>
+        ref.where('key', '==', id)
+      )
       .valueChanges();
   }
 }

@@ -8,9 +8,8 @@ describe('VakiRewardCardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ VakiRewardCardComponent ]
-    })
-    .compileComponents();
+      declarations: [VakiRewardCardComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
