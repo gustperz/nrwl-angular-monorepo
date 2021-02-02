@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "gustperz-vaki-challenge"
+  },
+  "targets": {
+    "gustperz-vaki-challenge": {
+      "hosting": {
+        "vakers": [
+          "gustperz-vaki-challenge"
+        ]
+      }
+    }
+  }
+}

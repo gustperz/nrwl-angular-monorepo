@@ -114,6 +114,10 @@
             "jestConfig": "apps/vakers/jest.config.js",
             "passWithNoTests": true
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     },
@@ -181,6 +185,31 @@
               "libs/vakis/types/src/**/*.ts",
               "libs/vakis/types/src/**/*.html"
             ]
+          }
+        }
+      }
+    },
+    "vakis-data": {
+      "projectType": "library",
+      "root": "libs/vakis/data",
+      "sourceRoot": "libs/vakis/data/src",
+      "prefix": "vaki",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/vakis/data/src/**/*.ts",
+              "libs/vakis/data/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/vakis/data"],
+          "options": {
+            "jestConfig": "libs/vakis/data/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }

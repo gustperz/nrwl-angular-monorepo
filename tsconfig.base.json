@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@vaki/vakis/ui": ["libs/vakis/ui/src/index.ts"],
-      "@vaki/vakis/types": ["libs/vakis/types/src/index.ts"]
+      "@vaki/vakis/types": ["libs/vakis/types/src/index.ts"],
+      "@vaki/vakis/data": ["libs/vakis/data/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
