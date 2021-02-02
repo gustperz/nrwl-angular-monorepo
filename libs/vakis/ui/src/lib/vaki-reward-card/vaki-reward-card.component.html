@@ -1,1 +1,16 @@
-<p>{{ reward.title }}</p>
+<mat-card class="reward-card">
+  <mat-card-header class="reward-card-head">
+    <mat-card-title>{{ reward.title }} </mat-card-title>
+    <img [src]="reward.img" alt="reward image" class="reward-img" />
+  </mat-card-header>
+
+  <mat-card-content>
+    <p [innerHTML]="reward.description"></p>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-stroked-button color="primary" class="get-reward-button">
+      {{ reward.value | currency: 'COP' }}
+    </button>
+  </mat-card-actions>
+</mat-card>

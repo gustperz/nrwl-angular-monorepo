@@ -1,0 +1,32 @@
+.reward-card {
+  .reward-card-head {
+    padding-bottom: 16px;
+    border-bottom: 1px solid #bfbfbf;
+
+    ::ng-deep .mat-card-header-text {
+      flex-grow: 1;
+    }
+  }
+
+  .reward-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+  }
+
+  mat-card-content {
+    padding-top: 16px;
+
+    p {
+      height: 80px;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+    }
+  }
+
+  .get-reward-button {
+    width: 100%;
+  }
+}
