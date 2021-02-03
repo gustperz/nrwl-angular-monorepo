@@ -24,7 +24,7 @@ export const getTotal = createSelector(getShoppingCartState, (state: State) =>
   Object.values(selectEntities(state)).reduce(
     (totals, item) => {
       totals.totalValue += item.quantity * item.value;
-      totals.totalItems++;
+      totals.totalItems += item.quantity;
 
       return totals;
     },
