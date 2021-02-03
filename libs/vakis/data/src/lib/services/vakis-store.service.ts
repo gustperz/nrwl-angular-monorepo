@@ -18,6 +18,6 @@ export class VakisStoreService {
       .collection<VakiReward>('vaki_rewards', (ref) =>
         ref.where('key', '==', id)
       )
-      .valueChanges();
+      .valueChanges({ idField: 'id' });
   }
 }
