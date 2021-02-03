@@ -3,5 +3,6 @@ module.exports = {
     '<rootDir>/apps/vakers',
     '<rootDir>/libs/vakis/ui',
     '<rootDir>/libs/vakis/data',
+    '<rootDir>/libs/rewards-shopping-cart',
   ],
 };
