@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Vaki, VakiReward } from '@vaki/vakis/types';
+
+import { Vaki, VakiReward } from '@vaki/shared/types';
 import { VakisStoreService } from '@vaki/vakis/data';
 
 @Component({

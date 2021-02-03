@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { VakiReward } from '@vaki/vakis/types';
+
+import { VakiReward } from '@vaki/shared/types';
 
 @Component({
   selector: 'vaki-vaki-reward-card[reward]',

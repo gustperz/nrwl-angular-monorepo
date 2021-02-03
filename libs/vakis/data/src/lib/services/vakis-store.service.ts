@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 
-import { Vaki, VakiReward } from '@vaki/vakis/types';
+import { Vaki, VakiReward } from '@vaki/shared/types';
 
 @Injectable({
   providedIn: 'root',

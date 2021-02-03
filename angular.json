@@ -172,23 +172,6 @@
         }
       }
     },
-    "vakis-types": {
-      "projectType": "library",
-      "root": "libs/vakis/types",
-      "sourceRoot": "libs/vakis/types/src",
-      "prefix": "vaki",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/vakis/types/src/**/*.ts",
-              "libs/vakis/types/src/**/*.html"
-            ]
-          }
-        }
-      }
-    },
     "vakis-data": {
       "projectType": "library",
       "root": "libs/vakis/data",
@@ -210,6 +193,23 @@
           "options": {
             "jestConfig": "libs/vakis/data/jest.config.js",
             "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shared-types": {
+      "projectType": "library",
+      "root": "libs/shared/types",
+      "sourceRoot": "libs/shared/types/src",
+      "prefix": "vaki",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/types/src/**/*.ts",
+              "libs/shared/types/src/**/*.html"
+            ]
           }
         }
       }

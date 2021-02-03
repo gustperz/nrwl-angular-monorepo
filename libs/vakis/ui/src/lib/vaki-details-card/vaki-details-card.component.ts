@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { Vaki } from '@vaki/vakis/types';
+import { Vaki } from '@vaki/shared/types';
 
 @Component({
   selector: 'vaki-vaki-details-card[vaki]',
