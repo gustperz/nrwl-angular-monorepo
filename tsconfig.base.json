@@ -17,7 +17,8 @@
     "paths": {
       "@vaki/vakis/ui": ["libs/vakis/ui/src/index.ts"],
       "@vaki/vakis/data": ["libs/vakis/data/src/index.ts"],
-      "@vaki/shared/types": ["libs/shared/types/src/index.ts"]
+      "@vaki/shared/types": ["libs/shared/types/src/index.ts"],
+      "@vaki/rewards-shopping-cart": ["libs/rewards-shopping-cart/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

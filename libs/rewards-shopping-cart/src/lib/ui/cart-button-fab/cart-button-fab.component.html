@@ -1,0 +1,18 @@
+<button
+  mat-fab
+  color="primary"
+  #tooltip="matTooltip"
+  [matTooltip]="
+    !!totalItems
+      ? (totalValue | currency: 'COP')
+      : 'No has seleccionado ninguna recompensa'
+  "
+  matTooltipPosition="above"
+  [matBadge]="totalItems"
+  [matBadgeHidden]="totalItems === 0"
+  matBadgePosition="before"
+  matBadgeColor="accent"
+  class="cart-button-fab"
+>
+  <mat-icon>shopping_basket</mat-icon>
+</button>

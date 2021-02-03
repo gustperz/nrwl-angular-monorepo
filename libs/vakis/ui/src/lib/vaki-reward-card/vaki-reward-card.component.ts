@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 import { VakiReward } from '@vaki/shared/types';
 
@@ -9,4 +9,5 @@ import { VakiReward } from '@vaki/shared/types';
 })
 export class VakiRewardCardComponent {
   @Input() reward: VakiReward;
+  @Output() actionButtonClick = new EventEmitter<VakiReward>();
 }

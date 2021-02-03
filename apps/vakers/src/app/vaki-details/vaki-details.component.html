@@ -1,10 +1,12 @@
-<div class='container'>
-  <vaki-vaki-details-card *ngIf='vaki' [vaki]='vaki'></vaki-vaki-details-card>
-  <h2 class='rewards-list-title'>Recompensas</h2>
-  <div class='rewards-list'>
+<div class="container">
+  <vaki-vaki-details-card *ngIf="vaki" [vaki]="vaki"></vaki-vaki-details-card>
+  <h2 class="rewards-list-title">Recompensas</h2>
+  <div class="rewards-list">
     <vaki-vaki-reward-card
-      *ngFor='let reward of rewards'
-      [reward]='reward'
+      *ngFor="let reward of rewards"
+      [reward]="reward"
+      (actionButtonClick)="addRewardToCard(reward)"
     ></vaki-vaki-reward-card>
   </div>
 </div>
+<vaki-cart-button-fab></vaki-cart-button-fab>

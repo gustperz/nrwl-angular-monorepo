@@ -9,7 +9,12 @@
   </mat-card-content>
 
   <mat-card-actions>
-    <button mat-stroked-button color="primary" class="get-reward-button">
+    <button
+      mat-stroked-button
+      (click)="actionButtonClick.emit(reward)"
+      color="primary"
+      class="get-reward-button"
+    >
       {{ reward.value | currency: 'COP' }}
     </button>
   </mat-card-actions>

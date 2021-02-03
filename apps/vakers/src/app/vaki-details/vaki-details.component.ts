@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 
 import { Vaki, VakiReward } from '@vaki/shared/types';
 import { VakisStoreService } from '@vaki/vakis/data';
+import {
+  addReward,
+  ShoppingCartPartialState,
+} from '@vaki/rewards-shopping-cart';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'vaki-vaki-details',
@@ -12,7 +17,10 @@ export class VakiDetailsComponent implements OnInit {
   vaki: Vaki;
   rewards: VakiReward[] = [];
 
-  constructor(private service: VakisStoreService) {}
+  constructor(
+    private service: VakisStoreService,
+    private store: Store<ShoppingCartPartialState>
+  ) {}
 
   ngOnInit(): void {
     const vakiId = 'J7jKgeiF5nn5euks01WB';
@@ -22,5 +30,10 @@ export class VakiDetailsComponent implements OnInit {
     this.service
       .getVakiRewards(vakiId)
       .subscribe((vakiRewards) => (this.rewards = vakiRewards));
+  }
+
+  addRewardToCard(reward: VakiReward) {
+    console.log('reward click');
+    this.store.dispatch(addReward({ vakiReward: reward }));
   }
 }
