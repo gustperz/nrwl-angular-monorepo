@@ -5,5 +5,6 @@ module.exports = {
     '<rootDir>/libs/vakis/data',
     '<rootDir>/libs/rewards-shopping-cart',
     '<rootDir>/libs/rewards-purchase/data',
+    '<rootDir>/apps/firebase-cloud-functions',
   ],
 };

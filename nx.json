@@ -22,6 +22,7 @@
     "vakis-data": { "tags": [] },
     "shared-types": { "tags": [] },
     "rewards-shopping-cart": { "tags": [] },
-    "rewards-purchase-data": { "tags": [] }
+    "rewards-purchase-data": { "tags": [] },
+    "firebase-cloud-functions": { "tags": [] }
   }
 }
