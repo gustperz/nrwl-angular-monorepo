@@ -39,7 +39,10 @@ const shoppingCartReducer = createReducer(
         state
       );
     }
-  )
+  ),
+  on(ShoppingCartActions.removeRewardFromCart, (state, { vakiRewardId }) => {
+    return shoppingCartAdapter.removeOne(vakiRewardId, state);
+  })
 );
 
 export function reducer(state: State | undefined, action: Action) {

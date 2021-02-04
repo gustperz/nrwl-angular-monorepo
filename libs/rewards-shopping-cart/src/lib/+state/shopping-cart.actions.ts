@@ -9,6 +9,11 @@ export const addReward = createAction(
   props<{ vakiReward: VakiReward }>()
 );
 
+export const removeRewardFromCart = createAction(
+  '[ShoppingCart] Remove RewardItem from cart',
+  props<{ vakiRewardId: string }>()
+);
+
 export const setRewardQuantity = createAction(
   '[ShoppingCart] Change Reward item quantity',
   props<{ vakiRewardId: string; quantity: number }>()
