@@ -1,0 +1,10 @@
+<div class="container">
+  <mat-card>
+    <vaki-reward-cart-item
+      *ngFor="let reward of items$ | async"
+      [item]="reward"
+      (quantityChanged)="updateItemQuantity(reward.id, $event)"
+      (removeButtonClick)="removeItem(reward)"
+    ></vaki-reward-cart-item>
+  </mat-card>
+</div>

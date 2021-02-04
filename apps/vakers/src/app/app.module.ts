@@ -11,9 +11,12 @@ import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 import { VakiDetailsComponent } from './vaki-details/vaki-details.component';
 import { RewardsShoppingCartModule } from '@vaki/rewards-shopping-cart';
+import { AppRoutingModule } from './app-routing.module';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
-  declarations: [AppComponent, VakiDetailsComponent],
+  declarations: [AppComponent, VakiDetailsComponent, ShoppingCartComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -23,6 +26,8 @@ import { RewardsShoppingCartModule } from '@vaki/rewards-shopping-cart';
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
     RewardsShoppingCartModule,
+    AppRoutingModule,
+    MatCardModule,
   ],
   providers: [RewardsShoppingCartModule],
   bootstrap: [AppComponent],
