@@ -1,4 +1,7 @@
-<mat-card class="reward-card">
+<mat-card
+  class="reward-card"
+  [ngClass]="{ disabled: reward.quantityAvailable === 0 }"
+>
   <mat-card-header class="reward-card-head">
     <mat-card-title>{{ reward.title }} </mat-card-title>
     <img [src]="reward.img" alt="reward image" class="reward-img" />
@@ -11,6 +14,7 @@
   <mat-card-actions>
     <button
       mat-stroked-button
+      [disabled]="reward.quantityAvailable === 0"
       (click)="actionButtonClick.emit(reward)"
       color="primary"
       class="get-reward-button"
