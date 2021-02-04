@@ -1,10 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 
-import {
-  getTotal,
-  ShoppingCartPartialState,
-} from '@vaki/rewards-shopping-cart';
+import { ShoppingCartPartialState } from '../../+state/shopping-cart.reducer';
+import { getTotal } from '../../+state/shopping-cart.selectors';
 import { MatTooltip } from '@angular/material/tooltip';
 
 @Component({
