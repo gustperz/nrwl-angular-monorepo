@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 
 import {
   getTotal,
   getShoppingCart,
   ShoppingCartPartialState,
-  VakiRewardCartItem,
   setRewardQuantity,
   removeRewardFromCart,
 } from '@vaki/rewards-shopping-cart';
-import { Observable } from 'rxjs';
+import { VakiRewardPurchaseItem } from '@vaki/shared/types';
 
 @Component({
   selector: 'vaki-shopping-cart',
@@ -18,7 +18,7 @@ import { Observable } from 'rxjs';
 })
 export class ShoppingCartComponent implements OnInit {
   totalValue: number;
-  items$: Observable<VakiRewardCartItem[]>;
+  items$: Observable<VakiRewardPurchaseItem[]>;
 
   constructor(private store: Store<ShoppingCartPartialState>) {}
 
@@ -38,7 +38,7 @@ export class ShoppingCartComponent implements OnInit {
     this.store.dispatch(setRewardQuantity({ vakiRewardId, quantity }));
   }
 
-  removeItem(item: VakiRewardCartItem) {
+  removeItem(item: VakiRewardPurchaseItem) {
     this.store.dispatch(removeRewardFromCart({ vakiRewardId: item.id }));
   }
 }

@@ -1,10 +1,17 @@
 <div class="container">
   <mat-card>
-    <vaki-reward-cart-item
-      *ngFor="let reward of items$ | async"
-      [item]="reward"
-      (quantityChanged)="updateItemQuantity(reward.id, $event)"
-      (removeButtonClick)="removeItem(reward)"
-    ></vaki-reward-cart-item>
+    <mat-card-header>
+      <button mat-raised-button color="primary" class="purchase-button">
+        Realizar pago {{ totalValue | currency: 'COP' }}
+      </button>
+    </mat-card-header>
+    <mat-card-content>
+      <vaki-reward-cart-item
+        *ngFor="let reward of items$ | async"
+        [item]="reward"
+        (quantityChanged)="updateItemQuantity(reward.id, $event)"
+        (removeButtonClick)="removeItem(reward)"
+      ></vaki-reward-cart-item>
+    </mat-card-content>
   </mat-card>
 </div>

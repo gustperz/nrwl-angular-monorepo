@@ -2,11 +2,11 @@ import { Action, ActionReducer, createReducer, on } from '@ngrx/store';
 import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 
 import * as ShoppingCartActions from './shopping-cart.actions';
-import { VakiRewardCartItem } from '../types/cart-item';
+import { VakiRewardPurchaseItem } from '@vaki/shared/types';
 
 export const SHOPPING_CART_FEATURE_KEY = 'shoppingCart';
 
-export interface State extends EntityState<VakiRewardCartItem> {
+export interface State extends EntityState<VakiRewardPurchaseItem> {
   ids: string[];
 }
 
@@ -14,7 +14,7 @@ export interface ShoppingCartPartialState {
   readonly [SHOPPING_CART_FEATURE_KEY]: State;
 }
 
-export const shoppingCartAdapter: EntityAdapter<VakiRewardCartItem> = createEntityAdapter<VakiRewardCartItem>();
+export const shoppingCartAdapter: EntityAdapter<VakiRewardPurchaseItem> = createEntityAdapter<VakiRewardPurchaseItem>();
 
 export const initialState: State = shoppingCartAdapter.getInitialState({
   ids: [],
