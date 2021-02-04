@@ -19,18 +19,18 @@
   </div>
 
   <div class="quantity-control">
-    <button mat-icon-button color="primary">
+    <button mat-icon-button color="primary" (click)="changeQuantity(-1)">
       <mat-icon>remove</mat-icon>
     </button>
     <div class="quantity-value">
       <span>{{ item.quantity }}</span>
     </div>
-    <button mat-icon-button color="primary">
+    <button mat-icon-button color="primary" (click)="changeQuantity(1)">
       <mat-icon>add</mat-icon>
     </button>
   </div>
 
-  <button mat-icon-button color="accent">
+  <button mat-icon-button color="accent" (click)="removeButtonClick.emit(item)">
     <mat-icon>clear</mat-icon>
   </button>
 </div>

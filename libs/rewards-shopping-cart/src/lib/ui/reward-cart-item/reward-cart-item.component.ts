@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+
 import { VakiRewardCartItem } from '@vaki/rewards-shopping-cart';
 
 @Component({
@@ -8,4 +9,10 @@ import { VakiRewardCartItem } from '@vaki/rewards-shopping-cart';
 })
 export class RewardCartItemComponent {
   @Input() item: VakiRewardCartItem;
+  @Output() quantityChanged = new EventEmitter<number>();
+  @Output() removeButtonClick = new EventEmitter<VakiRewardCartItem>();
+
+  changeQuantity(n: number) {
+    this.quantityChanged.emit(this.item.quantity + n);
+  }
 }
