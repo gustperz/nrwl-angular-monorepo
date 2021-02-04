@@ -29,9 +29,6 @@ const shoppingCartReducer = createReducer(
   on(ShoppingCartActions.addReward, (state, { vakiReward }) => {
     const quantity = (state.entities[vakiReward.id]?.quantity ?? 0) + 1;
 
-    console.log(quantity);
-    // console.log({ ...vakiReward, quantity });
-
     return shoppingCartAdapter.upsertOne({ ...vakiReward, quantity }, state);
   }),
   on(

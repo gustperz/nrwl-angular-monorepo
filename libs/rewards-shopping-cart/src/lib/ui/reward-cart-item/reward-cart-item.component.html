@@ -1,0 +1,36 @@
+<div class="cart-item">
+  <div class="content">
+    <div class="item-info">
+      <img [src]="item.img" alt="reward image" class="reward-img" />
+      <h3>{{ item.title }}</h3>
+    </div>
+
+    <div class="item-values">
+      <div class="item-value">
+        <h3>{{ item.value | currency: 'COP' }}</h3>
+        <span>Vr Unitario</span>
+      </div>
+
+      <div class="item-total">
+        <h3>{{ item.quantity * item.value | currency: 'COP' }}</h3>
+        <span>Total</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="quantity-control">
+    <button mat-icon-button color="primary">
+      <mat-icon>remove</mat-icon>
+    </button>
+    <div class="quantity-value">
+      <span>{{ item.quantity }}</span>
+    </div>
+    <button mat-icon-button color="primary">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+
+  <button mat-icon-button color="accent">
+    <mat-icon>clear</mat-icon>
+  </button>
+</div>
