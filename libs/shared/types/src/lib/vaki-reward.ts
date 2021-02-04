@@ -1,3 +1,6 @@
+import firebase from 'firebase';
+import Timestamp = firebase.firestore.Timestamp;
+
 export interface VakiReward {
   id: string;
   title: string;
@@ -6,7 +9,7 @@ export interface VakiReward {
   img: string;
   key: string;
   value: number;
-  delivery_date: number;
+  delivery_date: Timestamp;
   claimed: number;
   quantityAvailable: number;
 }
