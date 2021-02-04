@@ -14,6 +14,7 @@ import { RewardsShoppingCartModule } from '@vaki/rewards-shopping-cart';
 import { AppRoutingModule } from './app-routing.module';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [AppComponent, VakiDetailsComponent, ShoppingCartComponent],
@@ -28,6 +29,7 @@ import { MatCardModule } from '@angular/material/card';
     RewardsShoppingCartModule,
     AppRoutingModule,
     MatCardModule,
+    MatButtonModule,
   ],
   providers: [RewardsShoppingCartModule],
   bootstrap: [AppComponent],

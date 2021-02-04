@@ -238,6 +238,31 @@
           }
         }
       }
+    },
+    "rewards-purchase-data": {
+      "projectType": "library",
+      "root": "libs/rewards-purchase/data",
+      "sourceRoot": "libs/rewards-purchase/data/src",
+      "prefix": "vaki",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/rewards-purchase/data/src/**/*.ts",
+              "libs/rewards-purchase/data/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/rewards-purchase/data"],
+          "options": {
+            "jestConfig": "libs/rewards-purchase/data/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }

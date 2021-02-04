@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
 
 import {
   getTotal,
@@ -8,8 +7,10 @@ import {
   ShoppingCartPartialState,
   setRewardQuantity,
   removeRewardFromCart,
+  savePurchase,
 } from '@vaki/rewards-shopping-cart';
 import { VakiRewardPurchaseItem } from '@vaki/shared/types';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'vaki-shopping-cart',
@@ -18,16 +19,21 @@ import { VakiRewardPurchaseItem } from '@vaki/shared/types';
 })
 export class ShoppingCartComponent implements OnInit {
   totalValue: number;
-  items$: Observable<VakiRewardPurchaseItem[]>;
+  items: VakiRewardPurchaseItem[] = [];
 
-  constructor(private store: Store<ShoppingCartPartialState>) {}
+  constructor(
+    private store: Store<ShoppingCartPartialState>,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.store.pipe(select(getTotal)).subscribe(({ totalValue }) => {
       this.totalValue = totalValue;
     });
 
-    this.items$ = this.store.pipe(select(getShoppingCart));
+    this.store.pipe(select(getShoppingCart)).subscribe((items) => {
+      this.items = items;
+    });
   }
 
   updateItemQuantity(vakiRewardId: string, quantity: number) {
@@ -40,5 +46,15 @@ export class ShoppingCartComponent implements OnInit {
 
   removeItem(item: VakiRewardPurchaseItem) {
     this.store.dispatch(removeRewardFromCart({ vakiRewardId: item.id }));
+  }
+
+  sendPurchase() {
+    this.store.dispatch(
+      savePurchase({ vakiRewards: this.items, total: this.totalValue })
+    );
+  }
+
+  back() {
+    this.router.navigate(['/']);
   }
 }

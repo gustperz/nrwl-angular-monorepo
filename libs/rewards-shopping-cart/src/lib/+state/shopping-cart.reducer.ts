@@ -29,7 +29,15 @@ const shoppingCartReducer = createReducer(
   on(ShoppingCartActions.addReward, (state, { vakiReward }) => {
     const quantity = (state.entities[vakiReward.id]?.quantity ?? 0) + 1;
 
-    return shoppingCartAdapter.upsertOne({ ...vakiReward, quantity }, state);
+    const item = {
+      ...vakiReward,
+      delivery_date: vakiReward.delivery_date,
+      quantity,
+    };
+    delete item.quantityAvailable;
+    delete item.claimed;
+
+    return shoppingCartAdapter.upsertOne(item, state);
   }),
   on(
     ShoppingCartActions.setRewardQuantity,
@@ -42,6 +50,9 @@ const shoppingCartReducer = createReducer(
   ),
   on(ShoppingCartActions.removeRewardFromCart, (state, { vakiRewardId }) => {
     return shoppingCartAdapter.removeOne(vakiRewardId, state);
+  }),
+  on(ShoppingCartActions.savePurchaseSuccess, (state) => {
+    return shoppingCartAdapter.removeAll(state);
   })
 );
 
